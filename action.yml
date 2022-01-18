@@ -16,6 +16,6 @@ outputs:
 runs:
   using: docker
   #image: 'docker://example/foo:${{ inputs.which }}/Dockerfile'
-  image: 'foo/Dockerfile'
+  image: 'bar/Dockerfile'
   args:
     - ${{ inputs.who-to-greet }}
