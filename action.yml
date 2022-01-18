@@ -9,13 +9,13 @@ inputs:
   which:
     description: 'Which file to run'
     required: true
-    default: 'Dockerfile'
+    default: 'foo'
 outputs:
   time: # id of output
     description: 'The time we greeted you'
 runs:
   using: 'docker'
-  image: '${{ inputs.which }}/Dockerfile'
+  image: '${{ github.event.inputs.which }}/Dockerfile'
   #image: 'foo/Dockerfile'
   args:
-    - ${{ inputs.who-to-greet }}
+    - ${{ github.event.inputs.who-to-greet }}
