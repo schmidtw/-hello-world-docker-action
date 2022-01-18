@@ -6,11 +6,15 @@ inputs:
     description: 'Who to greet'
     required: true
     default: 'World'
+  which:
+    description: 'Which file to run'
+    required: true
+    default: 'Dockerfile'
 outputs:
   time: # id of output
     description: 'The time we greeted you'
 runs:
   using: 'docker'
-  image: 'Dockerfile'
+  image: '${{ inputs.which }}'
   args:
     - ${{ inputs.who-to-greet }}
